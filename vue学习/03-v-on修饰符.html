@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <div @click="divClick()">
+        111111111
+        <!--.stop修饰符使用-->
+        <button @click.stop="btn1Click()">按钮1</button>
+    </div>
+
+    <form action="baidu">
+        <input type="submit" value="提交" @click.prevent="submitClick">
+    </form>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+    const app =new Vue({
+        el:'#app',
+        data:{
+            abc: 123
+        },
+        methods:{
+            divClick(){
+                console.log("divClick");
+            },
+            btn1Click(){
+                console.log("btn1Click");
+            },
+            submitClick(){
+               console.log("submitClick");
+           }
+
+
+
+        }
+    });
+</script>
+</body>
+</html>
